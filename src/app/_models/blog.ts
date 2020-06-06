@@ -1,8 +1,11 @@
 ﻿export class User {
     id: number;
-    username: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-    token: string;
+    userId: number;
+    createdAt: string;
+    name: string;
+    avatar: string;
+    blogImage: string;
+    tags: string;
+    likes: string;
+    description: string;
 }
