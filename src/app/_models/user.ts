@@ -2,7 +2,8 @@
     id: number;
     username: string;
     password: string;
-    firstName: string;
-    lastName: string;
+    name: string;
+    avatar: string;
+    createdAt: string;
     token: string;
 }
