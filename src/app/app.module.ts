@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { AlertComponent } from './_components';
+import { AlertComponent } from './_components';;
+import { BlogComponent } from './blog/blog.component'
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { AlertComponent } from './_components';
         LoginComponent,
         RegisterComponent,
         AlertComponent
-    ],
+,
+        BlogComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
