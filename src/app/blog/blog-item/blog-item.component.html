@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="col-md-5 icons">
-            <i class="fa fa-trash" (click)="delete()"></i>
-            <i class="fa fa-edit" (click)="edit()"></i>
+            <i *ngIf="currentUser" class="fa fa-trash" (click)="delete()"></i>
+            <i *ngIf="currentUser" class="fa fa-edit" (click)="edit()"></i>
             <i class="fa fa-eye" (click)="view()"></i> 
         </div>
         

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ChangeDetectorRef } from '@angular/core';
 import {Comment} from '../../_models/comment'
+import { AuthenticationService } from 'src/app/_services';
+import { User } from 'src/app/_models/user';
 
 @Component({
   selector: 'app-comment-item',
@@ -9,8 +11,14 @@ import {Comment} from '../../_models/comment'
 export class CommentItemComponent implements OnInit {
 
   @ViewChild('textarea',{static: false}) textarea:any;
+  currentUser: User;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(private changeDetectorRef: ChangeDetectorRef,private authenticationService:AuthenticationService) {
+
+
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+
+   }
   @Input()
   comment:Comment
 

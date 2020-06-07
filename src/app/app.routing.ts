@@ -12,8 +12,8 @@ const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent},
-    { path: 'blog', component: BlogListComponent, canActivate: [AuthGuard]},
-    { path: 'blog/:blogId', component: BlogDetailComponent, canActivate: [AuthGuard]},
+    { path: 'blog', component: BlogListComponent},
+    { path: 'blog/:blogId', component: BlogDetailComponent},
     { path: 'blog-edit/:blogId', component: BlogEditComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

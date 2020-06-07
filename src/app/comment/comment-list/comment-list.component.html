@@ -34,14 +34,14 @@
 
 
 <br>
-<div class="container">
+<div class="container" >
   <div class="row">
 
     <div class="col-md-6">
       <div class="widget-area no-padding blank">
         <div class="status-upload">
-            <textarea cols="80" #textarea placeholder="What do you think about this blog ... ? "></textarea>
-            <button  (click)="addComment()" class="btn btn-success green"><i class="fa fa-share"></i> Submit </button>
+            <textarea [disabled]="!currentUser" cols="80" #textarea placeholder="What do you think about this blog ... ? "></textarea>
+            <button  [disabled]="!currentUser" (click)="addComment()" class="btn btn-success green"><i class="fa fa-share"></i> Submit </button>
         </div>
       </div>
     </div>

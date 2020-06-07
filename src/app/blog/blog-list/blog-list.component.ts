@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Blog } from 'src/app/_models/blog';
 import { filter } from 'rxjs/internal/operators/filter';
 import { Router } from '@angular/router';
+import { User } from 'src/app/_models';
+import { AuthenticationService } from 'src/app/_services';
 
 @Component({
   selector: 'app-blog-list',
@@ -15,14 +17,18 @@ export class BlogListComponent implements OnInit {
 
   config: any;
   collection = { count: 60, data: [] };
+  currentUser: User;
 
-  constructor(private blogService: BlogService,private router:Router) {
+  constructor(private blogService: BlogService,private router:Router,private authenticationService:AuthenticationService) {
 
     this.config = {
       itemsPerPage: 3,
       currentPage: 1,
       totalItems: this.collection.count
     };
+
+
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
 

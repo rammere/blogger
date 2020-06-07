@@ -3,6 +3,8 @@ import { Blog } from 'src/app/_models/blog';
 import { Router } from '@angular/router';
 import { BlogService } from 'src/app/_services/blog.service';
 import { EventEmitter } from '@angular/core';
+import { User } from 'src/app/_models/user';
+import { AuthenticationService } from 'src/app/_services';
 
 
 @Component({
@@ -17,8 +19,12 @@ export class BlogItemComponent implements OnInit {
 
 
   @Output() deleteDone: any= new EventEmitter();
+  currentUser: User;
 
-  constructor(private router:Router,private blogService:BlogService) { }
+  constructor(private router:Router,private blogService:BlogService,private authenticationService:AuthenticationService) { 
+  this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+
+  }
 
   ngOnInit(): void {
   }

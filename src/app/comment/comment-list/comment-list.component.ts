@@ -3,7 +3,8 @@ import { Commentservice } from 'src/app/_services/comment.service';
 import { Observable } from 'rxjs';
 import { Comment } from "../../_models/comment"
 import { map } from 'rxjs/operators';
-import { AlertService } from 'src/app/_services';
+import { AlertService, AuthenticationService } from 'src/app/_services';
+import { User } from 'src/app/_models';
 
 @Component({
   selector: 'app-comment-list',
@@ -12,8 +13,13 @@ import { AlertService } from 'src/app/_services';
 })
 export class CommentListComponent implements OnInit {
   commentData: any;
+  currentUser: User;
 
-  constructor(private commentService: Commentservice, private alertService: AlertService) { }
+  constructor(private commentService: Commentservice, private alertService: AlertService,private authenticationService:AuthenticationService) { 
+
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+
+  }
   @Input()
   blogId: number
 

@@ -10,7 +10,7 @@
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 
     <br>
-    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="addBlog()">Add new blog</button>
+    <button *ngIf="currentUser" type="button" class="btn btn-primary btn-lg btn-block" (click)="addBlog()">Add new blog</button>
 
 
 </div>
