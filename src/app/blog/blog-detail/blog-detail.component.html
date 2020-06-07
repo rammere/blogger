@@ -1,49 +1,45 @@
-
 <div class="header">
-
-
-    <div class="container">
-        <div class="row" *ngIf="blog">
-                <img class="blog-image" [src]="blog.blogImage" />
-            </div>  
+  <div class="container">
+    <div class="row" *ngIf="blog">
+      <img class="blog-image" [src]="blog.blogImage" />
     </div>
-    <br>
-    <div class="container" *ngIf="blog">
-        <div class="row">
-          <div class="col-sm">
-            <img [src]="blog.avatar" alt="blog_avatar" class="avatar"/>
-          </div>
-          <div class="col-sm">
-              <h3>
-              {{blog.name}}
-              </h3>
-              <div>
-              <span style="font-size: 12px">{{blog.createdAt}}</span>
-              </div>    
-          </div>
-
+  </div>
+  <br>
+  <div class="container" *ngIf="blog">
+    <div class="row">
+      <div class="col-sm">
+        <img [src]="blog.avatar" alt="blog_avatar" class="avatar" />
+      </div>
+      <div class="col-sm">
+        <h3>
+          {{blog.name}}
+        </h3>
+        <div>
+          <span style="font-size: 12px">{{blog.createdAt}}</span>
         </div>
       </div>
 
-      <br>
-      <br>
-      <br>
-      <div class="container" [innerHtml]="blog.description" *ngIf="blog">
+    </div>
+  </div>
 
-      </div>
+  <br>
+  <br>
+  <br>
+  <div class="container" [innerHtml]="blog.description" *ngIf="blog">
 
 
-
+  </div>
 </div>
 
 
+
 <br> <br> <br>
+    <span> {{blog.likes}} <i class="fa fa-thumbs-up" aria-hidden="true"></i> </span>
 
 
-<hr/>
-<hr/>
+<hr />
+<hr />
 
 
 
 <app-comment-list *ngIf="blog" [blogId]="blog.id"> </app-comment-list>
-

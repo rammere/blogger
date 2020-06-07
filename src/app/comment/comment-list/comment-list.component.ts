@@ -32,10 +32,7 @@ export class CommentListComponent implements OnInit {
   commentOperation(data) {
 
     if (data.operation == 'update') {
-      debugger;
       this.commentService.putComment(this.blogId, data.comment).subscribe(data => {
-
-        debugger;
 
         this.alertService.success('Updated successful', true);
         setTimeout(() => {
