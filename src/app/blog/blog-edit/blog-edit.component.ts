@@ -76,7 +76,7 @@ export class BlogEditComponent implements OnInit {
     }
     else {
       // update the current
-      this.blogService.putBlog({ name: this.blogForm.value.name, description: this.blogForm.value.description }, this.blogId).subscribe(data => {
+      this.blogService.postBlog({ name: this.blogForm.value.name, description: this.blogForm.value.description }).subscribe(data => {
         this.router.navigate(['/blog/']);
       }, err => {
         // fail

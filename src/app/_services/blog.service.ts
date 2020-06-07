@@ -11,7 +11,7 @@ export class BlogService {
 
 
     getBlogs(page, limit) {
-        return this.httpClient.get<Blog[]>("https://5ed89e234378690016c6a276.mockapi.io/api/blog?sortBy=createdAt&order=desc&page=" + page + "&limit=" + limit)
+        return this.httpClient.get<Blog[]>("https://5ed89e234378690016c6a276.mockapi.io/api/blog?sortBy=id&order=desc&page=" + page + "&limit=" + limit)
             .pipe(map(blogs => {
                 return blogs
             }))

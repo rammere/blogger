@@ -3,6 +3,7 @@ import { BlogService } from 'src/app/_services/blog.service';
 import { Observable } from 'rxjs';
 import { Blog } from 'src/app/_models/blog';
 import { filter } from 'rxjs/internal/operators/filter';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-list',
@@ -15,7 +16,7 @@ export class BlogListComponent implements OnInit {
   config: any;
   collection = { count: 60, data: [] };
 
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService,private router:Router) {
 
     this.config = {
       itemsPerPage: 3,
@@ -47,6 +48,12 @@ export class BlogListComponent implements OnInit {
   refreshBlogs(){
     this.config.currentPage=1
     this.loadBlogs()
+
+
+  }
+
+  addBlog(){
+    this.router.navigate(['/blog-edit/'+null])
 
   }
 
