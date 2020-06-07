@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Commentservice } from 'src/app/_services/comment.service';
 import { Observable } from 'rxjs';
-import {Comment} from "../../_models/comment"
+import { Comment } from "../../_models/comment"
+import { map } from 'rxjs/operators';
+import { AlertService } from 'src/app/_services';
 
 @Component({
   selector: 'app-comment-list',
@@ -9,15 +11,60 @@ import {Comment} from "../../_models/comment"
   styleUrls: ['./comment-list.component.scss']
 })
 export class CommentListComponent implements OnInit {
+  commentData: any;
 
-  constructor(private commentService:Commentservice) { }
+  constructor(private commentService: Commentservice, private alertService: AlertService) { }
   @Input()
-  blogId:number
+  blogId: number
 
-  public comments$:Observable<Comment[]>
+  public comments: Comment[]
+
+
+  @ViewChild('textarea') textarea: any;
+
 
   ngOnInit(): void {
-    this.comments$=this.commentService.getComments(this.blogId)
+    this.commentService.getComments(this.blogId).subscribe(data => {
+      this.comments = data
+    })
   }
+
+  commentOperation(data) {
+
+    if (data.operation == 'update') {
+      debugger;
+      this.commentService.putComment(this.blogId, data.comment).subscribe(data => {
+
+        debugger;
+
+        this.alertService.success('Updated successful', true);
+        setTimeout(() => {
+          this.alertService.clear()
+        }, 2000)
+
+      })
+
+    }
+    else {
+      this.commentService.deleteComment(this.blogId, data.comment.id).subscribe(data => {
+        this.comments = this.comments.filter(comment => comment.id !== data.id)
+        this.alertService.success('Deleted successful', true);
+        setTimeout(() => {
+          this.alertService.clear()
+        }, 2000)
+
+      })
+    }
+
+  }
+  addComment() {
+    this.commentService.postComment(this.blogId, { comment: this.textarea.nativeElement.value }).subscribe(comment => {
+      this.comments.push(comment)
+      this.textarea.nativeElement.value = ""
+    })
+  }
+  
+
+
 
 }

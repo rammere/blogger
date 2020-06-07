@@ -1,5 +1,32 @@
-<div>
-<p>{{comment.comment}}</p>
-<p>{{comment.createdAt}}</p>
+<div class="comment-box">
+
+<a class="pull-left">
+    <img class="media-object" src="https://bootdey.com/img/Content/User_for_snippets.png" alt="Avatar">
+</a>
+<div class="media-body">
+    <h4 class="media-heading">
+        <a>John Doe</a>
+        <small>{{comment.createdAt}}</small></h4>
+    <p *ngIf="!isUpdating">{{comment.comment}}</p>
+
+    <div *ngIf="isUpdating" class="container">
+        <div class="row">
+      
+          <div class="col-md-6">
+            <div class="widget-area no-padding blank">
+              <div class="status-upload">
+                  <textarea cols="80" #textarea placeholder="What do you think about this blog ... ? "></textarea>
+                  <button  (click)="updateComment()" class="btn btn-success green"><i class="fa fa-share"></i> Submit </button>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+
+</div>
+<button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+
+<button type="button" class="btn btn-info" (click)="update()">Update</button>
 
 </div>

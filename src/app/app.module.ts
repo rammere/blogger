@@ -29,9 +29,7 @@ import { BlogModule } from './blog/blog.module';
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
-        // BlogListModule,
         EditorModule,
-
         BlogModule
     ],
     declarations: [
@@ -40,8 +38,6 @@ import { BlogModule } from './blog/blog.module';
         LoginComponent,
         RegisterComponent,
         AlertComponent,
-        CommentListComponent ,
-        CommentItemComponent ,
 
         // JwPaginationComponent
 

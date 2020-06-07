@@ -1,3 +1,50 @@
-<div *ngFor="let comment of comments$ | async ">
+<!-- <div *ngFor="let comment of comments$ | async ">
     <app-comment-item [comment]="comment"></app-comment-item>
+</div> -->
+
+<div class="container bootstrap snippet">
+    <div class="col-sm-6">
+        <!-- Begin tab comment and popular posts -->
+        <div class="box-info full">
+            <!-- Tab comments and popular posts -->
+                    
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- Pane comments -->
+              <div class="tab-pane active animated fadeInRight" id="comments">
+                <!-- Begin scroll wrappper -->
+                <div class="slimScrollDiv" >
+                    <div class="scroll-widget">
+                    <ul class="media-list">
+                      <li class="media" *ngFor="let comment of comments">
+                            <app-comment-item (commentOperation)="commentOperation($event)" [comment]="comment"></app-comment-item>
+                      </li>
+                      
+                    </ul>
+                </div>
+                
+            </div>
+                
+              </div>
+              
+            </div>
+        </div>
+        </div>    
+    </div>	
+
+
+<br>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="widget-area no-padding blank">
+        <div class="status-upload">
+            <textarea cols="80" #textarea placeholder="What do you think about this blog ... ? "></textarea>
+            <button  (click)="addComment()" class="btn btn-success green"><i class="fa fa-share"></i> Submit </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

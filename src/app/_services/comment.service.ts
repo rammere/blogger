@@ -24,22 +24,20 @@ export class Commentservice {
             }))
 
     }
-
-    deleteComment(blogId, commentId) {
-        return this.httpClient.delete<any>("https://5ed89e234378690016c6a276.mockapi.io/api/blog/" + blogId + "/comment/" + commentId)
+    putComment(blogId,comment) {
+        return this.httpClient.put<any>("https://5ed89e234378690016c6a276.mockapi.io/api/blog/" + blogId + "/comment/"+comment.id, comment)
             .pipe(map(Comments => {
                 return Comments
             }))
 
     }
 
-    updateComment(blogId, comment) {
-        return this.httpClient.put<any>("https://5ed89e234378690016c6a276.mockapi.io/api/blog/" + blogId + "/comment/", comment)
+
+    deleteComment(blogId, commentId) {
+        return this.httpClient.delete<any>("https://5ed89e234378690016c6a276.mockapi.io/api/blog/" + blogId + "/comment/" + commentId)
             .pipe(map(Comments => {
                 return Comments
             }))
-
-
 
     }
 

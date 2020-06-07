@@ -7,6 +7,7 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { CommentModule } from '../comment/comment.module';
 
 
 
@@ -18,7 +19,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     ReactiveFormsModule,
     NgxPaginationModule,
     FormsModule,
-        EditorModule,
+    EditorModule,
+    CommentModule,
   ]
 })
 export class BlogModule { }

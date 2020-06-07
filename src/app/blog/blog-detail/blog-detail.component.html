@@ -28,8 +28,8 @@
       <br>
       <br>
       <br>
-      <div class="container" *ngIf="blog">
-          {{blog.description}}
+      <div class="container" [innerHtml]="blog.description" *ngIf="blog">
+
       </div>
 
 
@@ -37,7 +37,13 @@
 </div>
 
 
-<!-- <app-comment-list> </app-comment-list> -->
+<br> <br> <br>
 
 
+<hr/>
+<hr/>
+
+
+
+<app-comment-list *ngIf="blog" [blogId]="blog.id"> </app-comment-list>
 

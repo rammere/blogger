@@ -1,6 +1,12 @@
-﻿<h1>Hi {{currentUser.name}}!</h1>
-<p (click)="goToBlogs()">Click to Check latest blogs</p>
-<h3>All registered users:</h3>
+﻿<h1>Hi {{currentUser.username}}!</h1>
+
+<br> 
+<button type="button" class="btn btn-primary " (click)="goToBlogs()">Check latest blogs</button>
+
+
+<br> <br> <br>
+
+<h4>All registered users:</h4>
 <ul>
     <li *ngFor="let user of users">
         {{user.username}} ({{user.name}}

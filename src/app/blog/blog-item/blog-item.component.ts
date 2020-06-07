@@ -30,7 +30,6 @@ export class BlogItemComponent implements OnInit {
     this.router.navigate(['/blog-edit/'+this.blog.id])
   }
    delete(){
-     debugger;
      this.blogService.deleteBlog(this.blog.id).subscribe(data=>{
       //  success refresh blogs
       this.deleteDone.emit()
