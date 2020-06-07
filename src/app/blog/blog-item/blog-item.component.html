@@ -25,7 +25,8 @@
         <div class="row">
             
             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <p class="para">{{blog.description}}</p>
+                <div [innerHTML]="blog.description"></div>
+
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <img class="blog-image" [src]="blog.blogImage" />

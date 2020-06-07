@@ -44,5 +44,10 @@ export class BlogListComponent implements OnInit {
 
 
   }
+  refreshBlogs(){
+    this.config.currentPage=1
+    this.loadBlogs()
+
+  }
 
 }

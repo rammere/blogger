@@ -4,7 +4,7 @@
     </h4>
 
     <div *ngFor="let blog of collection.data | paginate: config">
-        <app-blog-item [blog]="blog"></app-blog-item>
+        <app-blog-item (deleteDone)="refreshBlogs()" [blog]="blog"></app-blog-item>
     </div>
 
     <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

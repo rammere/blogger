@@ -13,6 +13,8 @@ import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
 import { AlertComponent } from './_components';import { BlogListModule } from './blog/blog-list/blog-list.module';;
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 
 
@@ -28,6 +30,8 @@ import { BlogModule } from './blog/blog.module';
         HttpClientModule,
         appRoutingModule,
         // BlogListModule,
+        EditorModule,
+
         BlogModule
     ],
     declarations: [
