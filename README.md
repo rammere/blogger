@@ -4,5 +4,6 @@
 ### Angular 9
 
 ## Run the app : 
+### npm i
 ### ng serve
 
