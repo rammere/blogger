@@ -21,11 +21,10 @@ export class BlogItemComponent implements OnInit {
     this.router.navigate(['/blog/'+this.blog.id])
   }
   edit(){
-    this.router.navigate(['/blog/'+this.blog.id])
+    this.router.navigate(['/blog-edit/'])
   }
    delete(){
      this.blogService.deleteBlog(this.blog.id)
-     
  }
   
 

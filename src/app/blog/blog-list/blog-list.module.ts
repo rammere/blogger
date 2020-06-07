@@ -8,13 +8,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
 
-  exports: [BlogListComponent,BlogItemComponent],
-  declarations: [BlogListComponent,BlogItemComponent],
-  entryComponents: [BlogListComponent],
+  // exports: [BlogListComponent,BlogItemComponent],
+  // declarations: [BlogListComponent,BlogItemComponent],
+  // entryComponents: [BlogListComponent],
 
   imports: [
     CommonModule,
-    NgxPaginationModule
+    // NgxPaginationModule
   ]
 })
 export class BlogListModule { }

@@ -17,6 +17,13 @@ export class BlogService {
             }))
     }
 
+    getBlogById(blogId) {
+        return this.httpClient.get<Blog>("https://5ed89e234378690016c6a276.mockapi.io/api/blog/"+blogId)
+            .pipe(map(blog => {
+                return blog
+            }))
+    }
+
     postBlog(data) {
         return this.httpClient.post<Blog[]>("https://5ed89e234378690016c6a276.mockapi.io/api/blog", data)
             .pipe(map(blog => {

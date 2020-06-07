@@ -19,6 +19,7 @@ import { AlertComponent } from './_components';import { BlogListModule } from '.
 ;
 import { CommentListComponent } from './comment/comment-list/comment-list.component';;
 import { CommentItemComponent } from './comment/comment-item/comment-item.component'
+import { BlogModule } from './blog/blog.module';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { CommentItemComponent } from './comment/comment-item/comment-item.compon
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
-        BlogListModule,
+        // BlogListModule,
+        BlogModule
     ],
     declarations: [
         AppComponent,
@@ -36,6 +38,7 @@ import { CommentItemComponent } from './comment/comment-item/comment-item.compon
         AlertComponent,
         CommentListComponent ,
         CommentItemComponent ,
+
         // JwPaginationComponent
 
 

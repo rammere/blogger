@@ -6,6 +6,7 @@ import { RegisterComponent } from './register';
 import { AuthGuard } from './_helpers';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog/blog-detail/blog-detail.component';
+import { BlogEditComponent } from './blog/blog-edit/blog-edit.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent},
     { path: 'blog', component: BlogListComponent, canActivate: [AuthGuard]},
     { path: 'blog/:blogId', component: BlogDetailComponent, canActivate: [AuthGuard]},
+    { path: 'blog-edit', component: BlogEditComponent, canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
