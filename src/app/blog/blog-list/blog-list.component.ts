@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/_services/blog.service';
 import { Observable } from 'rxjs';
 import { Blog } from 'src/app/_models/blog';
+import { filter } from 'rxjs/internal/operators/filter';
 
 @Component({
   selector: 'app-blog-list',
@@ -9,14 +10,39 @@ import { Blog } from 'src/app/_models/blog';
   styleUrls: ['./blog-list.component.scss']
 })
 export class BlogListComponent implements OnInit {
-  public blogs$:Observable<Blog[]>
+  public blogs: Blog[]
 
-  constructor(private blogService:BlogService) { }
+  config: any;
+  collection = { count: 60, data: [] };
+
+  constructor(private blogService: BlogService) {
+
+    this.config = {
+      itemsPerPage: 3,
+      currentPage: 1,
+      totalItems: this.collection.count
+    };
+  }
+
+
+  pageChanged(event) {
+    this.config.currentPage = event;
+    this.loadBlogs()
+
+  }
+
 
   ngOnInit(): void {
+    this.loadBlogs()
+  }
 
-    this.blogs$=this.blogService.getBlogs()
+  loadBlogs() {
+    this.blogService.getBlogs(this.config.currentPage,this.config.itemsPerPage).pipe(filter(blogs => blogs.length > 0)).subscribe(blogs => {
+      this.collection.data = blogs
+      this.collection.count = blogs.length
+    })
 
-   }
+
+  }
 
 }

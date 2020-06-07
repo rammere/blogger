@@ -1,4 +1,4 @@
-﻿export class User {
+﻿export class Comment {
     id: number;
     blogId: number;
     createdAt: string;

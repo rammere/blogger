@@ -1,6 +1,40 @@
 
-<div style="padding:10px ; border:1px solid">
+<div class="main-div">
+    <div class="row">
+    
 
-<p>{{blog.name}}</p>
-<p>{{blog.description}}</p>
+        <div style="display:flex;" class="col-md-7" >
+            <img [src]="blog.avatar" alt="Description" class="avatar"/>
+            <div>
+                <span>{{blog.userId}}</span><br/>
+                <span style="font-size: 12px">{{blog.createdAt}}</span>
+            </div>
+        </div>
+        <div class="col-md-5 icons">
+            <i class="fa fa-trash"></i>
+            <i class="fa fa-edit"></i>
+                <i class="fa fa-eye" (click)="view()"></i> 
+        </div>
+        
+    </div>
+    
+    
+    <h4>{{blog.name}}</h4>
+
+    <div class="blog">
+        <div class="row">
+            
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <p class="para">{{blog.description}}</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <img class="blog-image" [src]="blog.blogImage" />
+            </div>
+        </div>    
+    </div>
+
+    
 </div>
+    <!-- blogImage: string;
+    tags: string; -->
+

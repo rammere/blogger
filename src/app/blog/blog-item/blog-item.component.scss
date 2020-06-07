@@ -1,0 +1,45 @@
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px
+  }
+
+  h4 {
+      padding:10px;
+  }
+
+  .blog{
+      padding: 10px;
+  }
+
+  .para{
+    text-indent: 20px;
+    display: block;
+    display: -webkit-box;
+    max-width: 350px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .blog-image{
+    width: 100%;
+    height: auto;
+  }
+
+  .main-div{
+    padding:10px ; 
+    border:1px solid black;
+    min-height: 150px;
+  }
+
+  .icons{
+      text-align: right;
+  }
+
+  .fa{
+      padding:5px;
+  }

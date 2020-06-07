@@ -12,8 +12,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { AlertComponent } from './_components';import { BlogListModule } from './blog/blog-list/blog-list.module';
+import { AlertComponent } from './_components';import { BlogListModule } from './blog/blog-list/blog-list.module';;
+
+
+
 ;
+import { CommentListComponent } from './comment/comment-list/comment-list.component';;
+import { CommentItemComponent } from './comment/comment-item/comment-item.component'
 
 @NgModule({
     imports: [
@@ -21,15 +26,21 @@ import { AlertComponent } from './_components';import { BlogListModule } from '.
         ReactiveFormsModule,
         HttpClientModule,
         appRoutingModule,
-        BlogListModule
+        BlogListModule,
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        AlertComponent
-       ],
+        AlertComponent,
+        CommentListComponent ,
+        CommentItemComponent ,
+        // JwPaginationComponent
+
+
+        ],
+    
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

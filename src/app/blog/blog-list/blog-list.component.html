@@ -1,7 +1,33 @@
-
-
+<!-- 
 <div *ngFor="let blog of blogs$ | async ">
     
     <app-blog-item [blog]="blog"></app-blog-item>
+
+
+
+
+</div> -->
+
+
+<div style="text-align:center">
+    <h4>
+        Blogs 
+    </h4>
+
+    <table class="table">
+        <!-- <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item</th>
+        </tr>
+      </thead> -->
+        <tbody>
+            <tr *ngFor="let blog of collection.data | paginate: config">
+                <app-blog-item [blog]="blog"></app-blog-item>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
 
 </div>
